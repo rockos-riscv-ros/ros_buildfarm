@@ -127,7 +127,6 @@ Changelog for package ros_buildfarm
 * Changes
 
   * 
-  * Refactor implicit package exclusion into common.py
   * use Python 3 / pip3 to install Python dependencies in doc jobs (`#772 <https://github.com/ros-infrastructure/ros_buildfarm/pull/772>`_)
   * Replace Warnings plugin with Warnings-ng (`#743 <https://github.com/ros-infrastructure/ros_buildfarm/pull/743>`_)
   * Update Jenkins subversion plugin. (`#741 <https://github.com/ros-infrastructure/ros_buildfarm/pull/741>`_)
@@ -228,6 +227,7 @@ Changelog for package ros_buildfarm
 * TO BE OMITTED: Could be a fix for a problem that was introduced during this development period, a housekeeping change, a small documentation change, etc
 
   * 
+  * Refactor implicit package exclusion into common.py
   * Parse manifests earlier during status page generation
   * Fix source RPM job regression (`#759 <https://github.com/ros-infrastructure/ros_buildfarm/pull/759>`_)
   * Fix a regression in RPM jobs (`#763 <https://github.com/ros-infrastructure/ros_buildfarm/pull/763>`_)
