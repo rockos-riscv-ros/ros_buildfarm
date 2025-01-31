@@ -61,7 +61,6 @@ Changelog for package ros_buildfarm
   * Call out the buildname for easier debugging (`#749 <https://github.com/ros-infrastructure/ros_buildfarm/pull/749>`_)
   * Reduce uniqueness of docker images to prevent continuous aggregation (`#748 <https://github.com/ros-infrastructure/ros_buildfarm/pull/748>`_)
   * Add per-project authorization for CI builds (`#737 <https://github.com/ros-infrastructure/ros_buildfarm/pull/737>`_)
-  * use GoogleTest / JUnit test result parser based on file pattern in ROS 2 (`#723 <https://github.com/ros-infrastructure/ros_buildfarm/pull/723>`_)
   * Add --dry-run option to generate_release_job (`#720 <https://github.com/ros-infrastructure/ros_buildfarm/pull/720>`_)
   * Add support for Jenkins credential binding plugin (`#716 <https://github.com/ros-infrastructure/ros_buildfarm/pull/716>`_)
   * Add support for param files in Jenkins trigger plugin (`#714 <https://github.com/ros-infrastructure/ros_buildfarm/pull/714>`_)
@@ -147,6 +146,7 @@ Changelog for package ros_buildfarm
 * TO BE OMITTED: Could be a fix for a problem that was introduced during this development period, a housekeeping change, a small documentation change, etc
 
   * 
+  * use GoogleTest / JUnit test result parser based on file pattern in ROS 2 (`#723 <https://github.com/ros-infrastructure/ros_buildfarm/pull/723>`_)
   * Drop "global" CI configuration (`#915 <https://github.com/ros-infrastructure/ros_buildfarm/pull/915>`_)
   * Fix an inverted boolean in sync_criteria_check CI (`#917 <https://github.com/ros-infrastructure/ros_buildfarm/pull/917>`_)
   * Revert "Work around a broken binutils release in RHEL 8.4" (`#928 <https://github.com/ros-infrastructure/ros_buildfarm/pull/928>`_)
