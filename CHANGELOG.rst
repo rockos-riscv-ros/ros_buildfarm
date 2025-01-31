@@ -8,6 +8,7 @@ Changelog for package ros_buildfarm
 * New features
 
   *
+  * Add RPM import_upstream job (`#779 <https://github.com/ros-infrastructure/ros_buildfarm/pull/779>`_)
   * Add a tool to audit a rosdistro and all it's buildfiles for missing dependencies. (`#815 <https://github.com/ros-infrastructure/ros_buildfarm/pull/815>`_)
   * Implement rosdoc2 documentation job type. (`#880 <https://github.com/ros-infrastructure/ros_buildfarm/pull/880>`_)
   * Add configurations for omitting package testing (`#903 <https://github.com/ros-infrastructure/ros_buildfarm/pull/903>`_)
@@ -30,6 +31,25 @@ Changelog for package ros_buildfarm
 * Improvements
 
   *
+  * Parse manifests earlier during status page generation
+  * Mark implicitly excluded packages in status pages
+  * Change --env-vars to parse as a dict (`#760 <https://github.com/ros-infrastructure/ros_buildfarm/pull/760>`_)
+  * Unify approach to computing package conditional context (`#761 <https://github.com/ros-infrastructure/ros_buildfarm/pull/761>`_)
+  * Process conditional dependencies in release jobs (`#758 <https://github.com/ros-infrastructure/ros_buildfarm/pull/758>`_)
+  * Use directory arguments on deb job scripts for decoupling (`#769 <https://github.com/ros-infrastructure/ros_buildfarm/pull/769>`_)
+  * Add sync-to-main job for RPM repos (`#771 <https://github.com/ros-infrastructure/ros_buildfarm/pull/771>`_)
+  * Sort CI job plot groups in Jenkins job XML (`#773 <https://github.com/ros-infrastructure/ros_buildfarm/pull/773>`_)
+  * Never skip ros_buildfarm RPM repositories (`#780 <https://github.com/ros-infrastructure/ros_buildfarm/pull/780>`_)
+  * Update repository status page to support RPM (`#781 <https://github.com/ros-infrastructure/ros_buildfarm/pull/781>`_)
+  * Add '$distname' resolution to RPM URLs (`#782 <https://github.com/ros-infrastructure/ros_buildfarm/pull/782>`_)
+  * Refactor get_package_repo_data out of common (`#783 <https://github.com/ros-infrastructure/ros_buildfarm/pull/783>`_)
+  * Introduce a PlatformPackageDescriptor object (`#785 <https://github.com/ros-infrastructure/ros_buildfarm/pull/785>`_)
+  * Add support to archive arbitrary artifacts in CI jobs. (`#784 <https://github.com/ros-infrastructure/ros_buildfarm/pull/784>`_)
+  * Allow file:// URLs to repos files in CI jobs (`#794 <https://github.com/ros-infrastructure/ros_buildfarm/pull/794>`_)
+  * Support --build-tool-args in generate_ci_script.py (`#792 <https://github.com/ros-infrastructure/ros_buildfarm/pull/792>`_)
+  * Enable package selection at build time in CI (`#791 <https://github.com/ros-infrastructure/ros_buildfarm/pull/791>`_)
+  * Add build_tool_test_args parameter to CI jobs (`#793 <https://github.com/ros-infrastructure/ros_buildfarm/pull/793>`_)
+  * only show failed test numbers in chart (`#798 <https://github.com/ros-infrastructure/ros_buildfarm/pull/798>`_)
   * Avoid peak loads for status page jobs. (`#801 <https://github.com/ros-infrastructure/ros_buildfarm/pull/801>`_)
   * Allow status page jobs to run on any agent. (`#799 <https://github.com/ros-infrastructure/ros_buildfarm/pull/799>`_)
   * Make docker container names unique for status pages. (`#800 <https://github.com/ros-infrastructure/ros_buildfarm/pull/800>`_)
@@ -110,6 +130,13 @@ Changelog for package ros_buildfarm
 * Changes
 
   * 
+  * Refactor implicit package exclusion into common.py
+  * use Python 3 / pip3 to install Python dependencies in doc jobs (`#772 <https://github.com/ros-infrastructure/ros_buildfarm/pull/772>`_)
+  * Replace Warnings plugin with Warnings-ng (`#743 <https://github.com/ros-infrastructure/ros_buildfarm/pull/743>`_)
+  * Update Jenkins subversion plugin. (`#741 <https://github.com/ros-infrastructure/ros_buildfarm/pull/741>`_)
+  * Update Jenkins xunit plugin. (`#744 <https://github.com/ros-infrastructure/ros_buildfarm/pull/744>`_)
+  * Update Jenkins script-security plugin. (`#742 <https://github.com/ros-infrastructure/ros_buildfarm/pull/742>`_)
+  * Re-add flake8_docstrings, add flake8_class_newline (`#795 <https://github.com/ros-infrastructure/ros_buildfarm/pull/795>`_)
   * Add Suite3 and Python2-Depends-Name configuration for stdeb releases. (`#816 <https://github.com/ros-infrastructure/ros_buildfarm/pull/816>`_)
   * Update Jenkins plugin versions used by ros_buildfarm. (`#826 <https://github.com/ros-infrastructure/ros_buildfarm/pull/826>`_)
   * Set junit_family=xunit2 for pytest results in Foxy and older distros (`#836 <https://github.com/ros-infrastructure/ros_buildfarm/pull/836>`_)
@@ -151,6 +178,10 @@ Changelog for package ros_buildfarm
 * Fixes
 
   *
+  * Resolve group membership and use in topological ordering (`#767 <https://github.com/ros-infrastructure/ros_buildfarm/pull/767>`_)
+  * Don't tell apt which versions of debian packages to install (`#775 <https://github.com/ros-infrastructure/ros_buildfarm/pull/775>`_)
+  * Don't show subpackage source packages as missing (`#787 <https://github.com/ros-infrastructure/ros_buildfarm/pull/787>`_)
+  * Don't consider source package name if not provided (`#788 <https://github.com/ros-infrastructure/ros_buildfarm/pull/788>`_)
   * Update importlib-metadata for Python 3.6 prerelease jobs (`#822 <https://github.com/ros-infrastructure/ros_buildfarm/pull/822>`_)
   * Ensure RPM mock macros start with % character (`#823 <https://github.com/ros-infrastructure/ros_buildfarm/pull/823>`_)
   * Fix the indentation for the warnings job snippet (`#838 <https://github.com/ros-infrastructure/ros_buildfarm/pull/838>`_)
@@ -200,6 +231,19 @@ Changelog for package ros_buildfarm
 * TO BE OMITTED: Could be a fix for a problem that was introduced during this development period, a housekeeping change, a small documentation change, etc
 
   * 
+  * Fix source RPM job regression (`#759 <https://github.com/ros-infrastructure/ros_buildfarm/pull/759>`_)
+  * Fix a regression in RPM jobs (`#763 <https://github.com/ros-infrastructure/ros_buildfarm/pull/763>`_)
+  * Drop manifest conditional evaluation from abi checker (`#762 <https://github.com/ros-infrastructure/ros_buildfarm/pull/762>`_)
+  * fix merging hard coded args with configuration provided args (`#765 <https://github.com/ros-infrastructure/ros_buildfarm/pull/765>`_)
+  * Refactor pulp workflows into a common file (`#768 <https://github.com/ros-infrastructure/ros_buildfarm/pull/768>`_)
+  * Create a standalone script for performing pulp repo syncs (`#770 <https://github.com/ros-infrastructure/ros_buildfarm/pull/770>`_)
+  * Support RPM repo sync with multiple destinations (`#774 <https://github.com/ros-infrastructure/ros_buildfarm/pull/774>`_)
+  * Address Travis configuration warnings and lint  (`#776 <https://github.com/ros-infrastructure/ros_buildfarm/pull/776>`_)
+  * Fine-tune the behavior of the rpm/sync_repo.py script (`#778 <https://github.com/ros-infrastructure/ros_buildfarm/pull/778>`_)
+  * Assume ros_buildfarm RPM repos will sign metadata (`#777 <https://github.com/ros-infrastructure/ros_buildfarm/pull/777>`_)
+  * Update import path for get_package_repo_data. (`#786 <https://github.com/ros-infrastructure/ros_buildfarm/pull/786>`_)
+  * Pin pyparsing 2.4.7 for Python 3.4 and 2.7 Travis CI jobs. (`#789 <https://github.com/ros-infrastructure/ros_buildfarm/pull/789>`_)
+  * fix missing static analysis issues column (`#797 <https://github.com/ros-infrastructure/ros_buildfarm/pull/797>`_)
   * Slow down the repos status page to hourly. (`#799 <https://github.com/ros-infrastructure/ros_buildfarm/pull/799>`_)
   * Support latest flake8 release (`#809 <https://github.com/ros-infrastructure/ros_buildfarm/pull/809>`_)
   * Disable mock bootstrapping in RPM builds (`#804 <https://github.com/ros-infrastructure/ros_buildfarm/pull/804>`_)
