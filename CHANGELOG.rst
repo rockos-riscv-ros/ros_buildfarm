@@ -8,6 +8,12 @@ Changelog for package ros_buildfarm
 * New features
 
   *
+  * Add configurations for omitting package testing (`#903 <https://github.com/ros-infrastructure/ros_buildfarm/pull/903>`_)
+  * Add rosdoc2 support to generate_doc_maintenance_jobs.py (`#916 <https://github.com/ros-infrastructure/ros_buildfarm/pull/916>`_)
+  * Add in the capability for a sync package percent. (`#896 <https://github.com/ros-infrastructure/ros_buildfarm/pull/896>`_)
+  * Add a validation script for buildfarm configuration (`#913 <https://github.com/ros-infrastructure/ros_buildfarm/pull/913>`_)
+  * Add support for publishing CI archives to the repo host (`#932 <https://github.com/ros-infrastructure/ros_buildfarm/pull/932>`_)
+  * Add 'list_priorities.py' helper script (`#975 <https://github.com/ros-infrastructure/ros_buildfarm/pull/975>`_)
   * Use createrepo-agent for RPMs. (`#976 <https://github.com/ros-infrastructure/ros_buildfarm/pull/976>`_)
   * Set up Bazel single-threaded compilation limit. (`#1016 <https://github.com/ros-infrastructure/pull/1016>`_)
   * Add support for distro-independent CI jobs on Jenkins (`#1056 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1056>`_)
@@ -22,6 +28,16 @@ Changelog for package ros_buildfarm
 * Improvements
 
   *
+  * Also set DEB_BUILD_PROFILES when skipping tests (`#918 <https://github.com/ros-infrastructure/ros_buildfarm/pull/918>`_)
+  * Parse deb dependency exclusions and support nocheck (`#919 <https://github.com/ros-infrastructure/ros_buildfarm/pull/919>`_)
+  * Switch from hacky dist_suffix to release_suffix in RPMs (`#939 <https://github.com/ros-infrastructure/ros_buildfarm/pull/939>`_)
+  * Teach CI jobs to pull released packages from rosdistro (`#944 <https://github.com/ros-infrastructure/ros_buildfarm/pull/944>`_)
+  * Add rosdoc2 job to CI workflow. (`#949 <https://github.com/ros-infrastructure/ros_buildfarm/pull/949>`_)
+  * Disable jobs downstream of packages with nulled release versions (`#951 <https://github.com/ros-infrastructure/ros_buildfarm/pull/951>`_)
+  * Mark CI jobs unstable based on static analysis (`#953 <https://github.com/ros-infrastructure/ros_buildfarm/pull/953>`_)
+  * Only install workspace package in ROS 2 devel jobs not CI jobs. (`#955 <https://github.com/ros-infrastructure/ros_buildfarm/pull/955>`_)
+  * Create checksum files with CI archives (`#956 <https://github.com/ros-infrastructure/ros_buildfarm/pull/956>`_)
+  * Opt-out of Phased Updates in apt in CI jobs (`#969 <https://github.com/ros-infrastructure/ros_buildfarm/pull/969>`_)
   * Add support for bare file paths in index URL (`#974 <https://github.com/ros-infrastructure/ros_buildfarm/pull/974>`_)
   * Add support for group dependencies in release jobs (`#980 <https://github.com/ros-infrastructure/ros_buildfarm/pull/980>`_)
   * Stop considering disabled packages to be regressions (`#984 <https://github.com/ros-infrastructure/ros_buildfarm/pull/984>`_)
@@ -66,6 +82,18 @@ Changelog for package ros_buildfarm
 * Changes
 
   * 
+  * add graphviz as a dependency necessary for sphinx in rosdoc_lite
+  * Add CI action for reconfiguring release jobs (`#912 <https://github.com/ros-infrastructure/ros_buildfarm/pull/912>`_)
+  * Switch from CentOS 8 to AlmaLinux for RHEL jobs (`#929 <https://github.com/ros-infrastructure/ros_buildfarm/pull/929>`_)
+  * Un-normalize some test dependency package names (`#924 <https://github.com/ros-infrastructure/ros_buildfarm/pull/924>`_)
+  * Run status jobs in Focal containers rather than Xenial. (`#885 <https://github.com/ros-infrastructure/ros_buildfarm/pull/885>`_)
+  * Update label expression for jobs running on Jenkins built-in agent. (`#934 <https://github.com/ros-infrastructure/ros_buildfarm/pull/934>`_)
+  * Add os code name mapping for Ubuntu Jammy and Debian Bullseye. (`#942 <https://github.com/ros-infrastructure/ros_buildfarm/pull/942>`_)
+  * Unify approach to using 'logging' module (`#945 <https://github.com/ros-infrastructure/ros_buildfarm/pull/945>`_)
+  * List 'ROS Infrastructure Team' as the package maintainer (`#952 <https://github.com/ros-infrastructure/ros_buildfarm/pull/952>`_)
+  * Declare test dependencies in [test] extra (`#967 <https://github.com/ros-infrastructure/ros_buildfarm/pull/967>`_)
+  * Explicitly state no compatibility with flake8 >= 5.0.0 (`#970 <https://github.com/ros-infrastructure/ros_buildfarm/pull/970>`_)
+  * Move all scripts into the Python package
   * Increase the default timeout for Jenkins connections (`#981 <https://github.com/ros-infrastructure/ros_buildfarm/pull/981>`_)
   * Target RHEL 9 in CI (`#995 <https://github.com/ros-infrastructure/ros_buildfarm/pull/995>`_)
   * Convert Bionic CI jobs to run on Focal (`#996 <https://github.com/ros-infrastructure/ros_buildfarm/pull/996>`_)
@@ -79,6 +107,11 @@ Changelog for package ros_buildfarm
 * Fixes
 
   *
+  * Make python3 interpreter replacement in scripts stricter (`#925 <https://github.com/ros-infrastructure/ros_buildfarm/pull/925>`_)
+  * Don't configure CI maintenance job more than once (`#941 <https://github.com/ros-infrastructure/ros_buildfarm/pull/941>`_)
+  * Set trigger_timer from build file if unset. (`#922 <https://github.com/ros-infrastructure/ros_buildfarm/pull/922>`_)
+  * Fix double minus sign on timezone (`#935 <https://github.com/ros-infrastructure/ros_buildfarm/pull/935>`_)
+  * Fix page percent division by zero (`#960 <https://github.com/ros-infrastructure/ros_buildfarm/pull/960>`_)
   * Fix handling of 'None' group members (`#990 <https://github.com/ros-infrastructure/ros_buildfarm/pull/990>`_)
   * Set a sane HOME for binarypkg jobs. (`#1013 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1013>`_)
   * Fix binarydeb permission cleanup script. (`#1025 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1025`_)
@@ -114,6 +147,25 @@ Changelog for package ros_buildfarm
 * TO BE OMITTED: Could be a fix for a problem that was introduced during this development period, a housekeeping change, a small documentation change, etc
 
   * 
+  * Drop "global" CI configuration (`#915 <https://github.com/ros-infrastructure/ros_buildfarm/pull/915>`_)
+  * Fix an inverted boolean in sync_criteria_check CI (`#917 <https://github.com/ros-infrastructure/ros_buildfarm/pull/917>`_)
+  * Revert "Work around a broken binutils release in RHEL 8.4" (`#928 <https://github.com/ros-infrastructure/ros_buildfarm/pull/928>`_)
+  * Make RPM import operations a little faster (`#921 <https://github.com/ros-infrastructure/ros_buildfarm/pull/921>`_)
+  * Separate objects when passing cache and new packages to pulp sync (`#931 <https://github.com/ros-infrastructure/ros_buildfarm/pull/931>`_)
+  * Don't crawl non-ROS packages using rosdep in CI jobs (`#920 <https://github.com/ros-infrastructure/ros_buildfarm/pull/920>`_)
+  * Deprecate unused dist_file kwarg from configure_ci_job (`#926 <https://github.com/ros-infrastructure/ros_buildfarm/pull/926>`_)
+  * Bump pulp task timeout to 2 minutes (`#930 <https://github.com/ros-infrastructure/ros_buildfarm/pull/930>`_)
+  * Work around for broken EPEL 8 mock configs (`#938 <https://github.com/ros-infrastructure/ros_buildfarm/pull/938>`_)
+  * Target Jammy for Rolling builds in CI (`#943 <https://github.com/ros-infrastructure/ros_buildfarm/pull/943>`_)
+  * Instrument pulp import operations (`#946 <https://github.com/ros-infrastructure/ros_buildfarm/pull/946>`_)
+  * Use deprecated out-of-tree build in rosdoc2. (`#948 <https://github.com/ros-infrastructure/ros_buildfarm/pull/948>`_)
+  * Stop implicitly installing the ros_workspace package (`#950 <https://github.com/ros-infrastructure/ros_buildfarm/pull/950>`_)
+  * Pin setuptools to 59.6.0. (`#954 <https://github.com/ros-infrastructure/ros_buildfarm/pull/954>`_)
+  * Add a script for culling Pulp content (`#959 <https://github.com/ros-infrastructure/ros_buildfarm/pull/959>`_)
+  * Use a specific exception class for Pulp task failures (`#962 <https://github.com/ros-infrastructure/ros_buildfarm/pull/962>`_)
+  * Fix the argument type on --pulp-task-timeout (`#961 <https://github.com/ros-infrastructure/ros_buildfarm/pull/961>`_)
+  * Re-add script files which invoke the new modules
+  * Fix some scripts which didn't previously require ros_buildfarm (`#977 <https://github.com/ros-infrastructure/ros_buildfarm/pull/977>`_)
   * Disable Pulp operations in Jenkins RPM jobs (`#979 <https://github.com/ros-infrastructure/ros_buildfarm/pull/979>`_)
   * Fix non-zero exit codes from scripts (`#983 <https://github.com/ros-infrastructure/ros_buildfarm/pull/983>`_)
   * Fix non-zero exit codes from wrappers (`#985 <https://github.com/ros-infrastructure/ros_buildfarm/pull/985>`_)
