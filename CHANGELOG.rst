@@ -8,6 +8,12 @@ Changelog for package ros_buildfarm
 * New features
 
   *
+  * Use createrepo-agent for RPMs. (`#976 <https://github.com/ros-infrastructure/ros_buildfarm/pull/976>`_)
+  * Set up Bazel single-threaded compilation limit. (`#1016 <https://github.com/ros-infrastructure/pull/1016>`_)
+  * Add support for distro-independent CI jobs on Jenkins (`#1056 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1056>`_)
+  * Add support for custom_rosdep_urls in build files (`#1055 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1055>`_)
+  * Add per-package configuration for release binary job weight (`#1063 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1063>`_)
+  * Add !relative_url YAML constructor (`#1057 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1057>`_)
   * Support for building RPM packages (`#713 <https://github.com/ros-infrastructure/ros_buildfarm/pull/713>`_) (`#726 <https://github.com/ros-infrastructure/ros_buildfarm/pull/726>`_) (`#727 <https://github.com/ros-infrastructure/ros_buildfarm/pull/727>`_) (`#729 <https://github.com/ros-infrastructure/ros_buildfarm/pull/729>`_) (`#731 <https://github.com/ros-infrastructure/ros_buildfarm/pull/731>`_) (`#721 <https://github.com/ros-infrastructure/ros_buildfarm/pull/721>`_) (`#730 <https://github.com/ros-infrastructure/ros_buildfarm/pull/730>`_) (`#732 <https://github.com/ros-infrastructure/ros_buildfarm/pull/732>`_) (`#733 <https://github.com/ros-infrastructure/ros_buildfarm/pull/733>`_) (`#735 <https://github.com/ros-infrastructure/ros_buildfarm/pull/735>`_) (`#745 <https://github.com/ros-infrastructure/ros_buildfarm/pull/745>`_) (`#756 <https://github.com/ros-infrastructure/ros_buildfarm/pull/756>`_) (`#757 <https://github.com/ros-infrastructure/ros_buildfarm/pull/757>`_)
   * GPU support for build files (`#624 <https://github.com/ros-infrastructure/ros_buildfarm/pull/624>`_)
   * Implement the abichecker run on devel builds (`#681 <https://github.com/ros-infrastructure/ros_buildfarm/pull/681>`_)
@@ -16,6 +22,25 @@ Changelog for package ros_buildfarm
 * Improvements
 
   *
+  * Add support for bare file paths in index URL (`#974 <https://github.com/ros-infrastructure/ros_buildfarm/pull/974>`_)
+  * Add support for group dependencies in release jobs (`#980 <https://github.com/ros-infrastructure/ros_buildfarm/pull/980>`_)
+  * Stop considering disabled packages to be regressions (`#984 <https://github.com/ros-infrastructure/ros_buildfarm/pull/984>`_)
+  * Enable CRB in RHEL containers (`#991 <https://github.com/ros-infrastructure/ros_buildfarm/pull/991>`_)
+  * Call dpkg-buildpackage directly instead of apt-src (`#986 <https://github.com/ros-infrastructure/ros_buildfarm/pull/986>`_)
+  * Handle virtual deb packages when querying apt cache (`#1023 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1023>`_)
+  * Display CPU information in build log. (`#1010 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1010>`_)
+  * Read virtual packages from deb/RPM repositories (`#1022 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1022>`_)
+  * Handle RPM *-SPECPARTS build subdirectory (`#1033 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1033>`_)
+  * Use environment to configure breaking system packages. (`#1036 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1036>`_)
+  * Set PODMAN_USERNS=keep-id when invoking 'docker run' (`#1032 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1032>`_)
+  * Make sure to call generate_doc_maintenance_jobs.py for rosdoc2. (`#1043 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1043>`_)
+  * Avoid jenkinsapi trying to fetch all jobs. (`#1045 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1045>`_)
+  * Clean up any dangling cidfiles (Container ID files) in workspace. (`#1047 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1047>`_)
+  * Use tar and ssh to publish package metadata files. (`#1049 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1049>`_)
+  * Add new seccomp warning text to ignore pattern. (`#1050 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1050>`_)
+  * Add logic for excluding group workaround dependencies (`#1040 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1040>`_)
+  * Switch to rosdistro.get_package_condition_context API (`#1065 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1065>`_)
+  * Support unsigned apt repositories (`#947 <https://github.com/ros-infrastructure/ros_buildfarm/pull/947>`_)
   * Include filtered packages in status pages (`#750 <https://github.com/ros-infrastructure/ros_buildfarm/pull/750>`_)
   * Call out the buildname for easier debugging (`#749 <https://github.com/ros-infrastructure/ros_buildfarm/pull/749>`_)
   * Reduce uniqueness of docker images to prevent continuous aggregation (`#748 <https://github.com/ros-infrastructure/ros_buildfarm/pull/748>`_)
@@ -41,6 +66,12 @@ Changelog for package ros_buildfarm
 * Changes
 
   * 
+  * Increase the default timeout for Jenkins connections (`#981 <https://github.com/ros-infrastructure/ros_buildfarm/pull/981>`_)
+  * Target RHEL 9 in CI (`#995 <https://github.com/ros-infrastructure/ros_buildfarm/pull/995>`_)
+  * Convert Bionic CI jobs to run on Focal (`#996 <https://github.com/ros-infrastructure/ros_buildfarm/pull/996>`_)
+  * Add os code name mapping for Ubuntu Noble (`#1017 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1017>`_)
+  * Drop support for CentOS/RHEL 7 (`#1034 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1034>`_)
+  * Stop testing Python 3.5 support. (`#1048 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1048>`_)
   * Update plugin versions (`#660 <https://github.com/ros-infrastructure/ros_buildfarm/pull/660>`_) (`#683 <https://github.com/ros-infrastructure/ros_buildfarm/pull/683>`_) (`#698 <https://github.com/ros-infrastructure/ros_buildfarm/pull/698>`_)
   * Don't override MAKEFLAGS blindly (`#645 <https://github.com/ros-infrastructure/ros_buildfarm/pull/645>`_)
   * Update GPG key and move to supported platform for CI builds (`#641 <https://github.com/ros-infrastructure/ros_buildfarm/pull/641>`_)
@@ -48,6 +79,12 @@ Changelog for package ros_buildfarm
 * Fixes
 
   *
+  * Fix handling of 'None' group members (`#990 <https://github.com/ros-infrastructure/ros_buildfarm/pull/990>`_)
+  * Set a sane HOME for binarypkg jobs. (`#1013 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1013>`_)
+  * Fix binarydeb permission cleanup script. (`#1025 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1025`_)
+  * Use raw strings when specifying regular expressions (`#1038 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1038>`_)
+  * Switch from 'include_package_data' to 'package_data' (`#1039 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1039>`_)
+  * Install ca-certificates before processing repository keys (`#1062 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1062>`_)
   * add missing jenkinsapi dependency (`#754 <https://github.com/ros-infrastructure/ros_buildfarm/pull/754>`_)
   * Install rosdoc_lite deps based on python version (`#751 <https://github.com/ros-infrastructure/ros_buildfarm/pull/751>`_)
   * Do not reuse cid files (`#753 <https://github.com/ros-infrastructure/ros_buildfarm/pull/753>`_)
@@ -77,6 +114,29 @@ Changelog for package ros_buildfarm
 * TO BE OMITTED: Could be a fix for a problem that was introduced during this development period, a housekeeping change, a small documentation change, etc
 
   * 
+  * Disable Pulp operations in Jenkins RPM jobs (`#979 <https://github.com/ros-infrastructure/ros_buildfarm/pull/979>`_)
+  * Fix non-zero exit codes from scripts (`#983 <https://github.com/ros-infrastructure/ros_buildfarm/pull/983>`_)
+  * Fix non-zero exit codes from wrappers (`#985 <https://github.com/ros-infrastructure/ros_buildfarm/pull/985>`_)
+  * Don't use setuptools >= 66 in CI (`#992 <https://github.com/ros-infrastructure/ros_buildfarm/pull/992>`_)
+  * Pin RHEL 9 builds to 9.1 (`#999 <https://github.com/ros-infrastructure/ros_buildfarm/pull/999>`_)
+  * Restore exec dependencies during non-test system packaging (`#994 <https://github.com/ros-infrastructure/ros_buildfarm/pull/994>`_)
+  * Revert "Pin RHEL 9 builds to 9.1 (#999)" (`#1005 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1005>`_)
+  * Fix `pytest-rerunfailures` installation by using apt instead of pip (`#1020 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1020>`_)
+  * Setup bazel single compilation thread in release deb/rpm
+  * Fix error message when a package isn't available (`#1024 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1024>`_)
+  * Fix check for WORKSPACE/binarydeb to look use directory instead of file
+  * Adding break-system-packages pip option for noble in devel_task (`#1026 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1026>`_)
+  * Working to bring CI back to green (`#1015 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1015>`_)
+  * Mount rosdoc2 source directory read-write. (`#1031 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1031>`_)
+  * Merge branch 'master' into jrivero/bazel_release_limit_1
+  * Merge branch 'master' into jrivero/fix_binarydeb_cleanup
+  * Revert "Work around for broken EPEL 8 mock configs (#938)" (`#1035 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1035>`_)
+  * Add jammy rosdoc2 jobs as well. (`#1037 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1037>`_)
+  * Eliminate Pulp from ros_buildfarm (`#998 <https://github.com/ros-infrastructure/ros_buildfarm/pull/998>`_)
+  * Add RPM jobs as upstream of upload jobs (`#1052 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1052>`_)
+  * Additional fixes for RPM triggers for upload jobs (`#1053 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1053>`_)
+  * Preliminary support for distro-independent CI jobs (`#968 <https://github.com/ros-infrastructure/ros_buildfarm/pull/968>`_)
+  * Don't warn of script location in rosdoc2 (`#1058 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1058>`_)
   * Revert "rewrite shebang lines for Python 3 when using cmi" (`#739 <https://github.com/ros-infrastructure/ros_buildfarm/pull/739>`_)
   * Fix typo in documentation. (`#738 <https://github.com/ros-infrastructure/ros_buildfarm/pull/738>`_)
   * revert custom xunit types (`#725 <https://github.com/ros-infrastructure/ros_buildfarm/pull/725>`_)
