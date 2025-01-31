@@ -30,7 +30,6 @@ Changelog for package ros_buildfarm
 * Improvements
 
   *
-  * Parse manifests earlier during status page generation
   * Mark implicitly excluded packages in status pages
   * Change --env-vars to parse as a dict (`#760 <https://github.com/ros-infrastructure/ros_buildfarm/pull/760>`_)
   * Unify approach to computing package conditional context (`#761 <https://github.com/ros-infrastructure/ros_buildfarm/pull/761>`_)
@@ -230,6 +229,7 @@ Changelog for package ros_buildfarm
 * TO BE OMITTED: Could be a fix for a problem that was introduced during this development period, a housekeeping change, a small documentation change, etc
 
   * 
+  * Parse manifests earlier during status page generation
   * Fix source RPM job regression (`#759 <https://github.com/ros-infrastructure/ros_buildfarm/pull/759>`_)
   * Fix a regression in RPM jobs (`#763 <https://github.com/ros-infrastructure/ros_buildfarm/pull/763>`_)
   * Drop manifest conditional evaluation from abi checker (`#762 <https://github.com/ros-infrastructure/ros_buildfarm/pull/762>`_)
