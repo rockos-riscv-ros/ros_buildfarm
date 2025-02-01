@@ -29,6 +29,10 @@ Changelog for package ros_buildfarm
 
 * Improvements
 
+  * Convert to subprocess model for flake8 test (`#1075 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1075>`_)
+  * Make apt work with unsigned repositories (`#1070 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1070>`_)
+  * Add flags to separate generate_release_script parts (`#1066 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1066>`_)
+  * Delete any existing UID user in Dockerfile (`#1061 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1061>`_)
   * Support unsigned apt repositories (`#947 <https://github.com/ros-infrastructure/ros_buildfarm/pull/947>`_)
   * Switch to rosdistro.get_package_condition_context API (`#1065 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1065>`_)
   * Add logic for excluding group workaround dependencies (`#1040 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1040>`_)
@@ -37,7 +41,7 @@ Changelog for package ros_buildfarm
   * Clean up any dangling cidfiles (Container ID files) in workspace. (`#1047 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1047>`_)
   * Avoid jenkinsapi trying to fetch all jobs. (`#1045 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1045>`_)
   * Make sure to call generate_doc_maintenance_jobs.py for rosdoc2. (`#1043 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1043>`_)
-  * Set PODMAN_USERNS=keep-id when invoking 'docker run' (`#1032 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1032>`_)
+  * Set PODMAN_USERNS=keep-id when invoking 'docker run' (`#1032 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1032>`_) (`#1069 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1069>`_)
   * Use environment to configure breaking system packages. (`#1036 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1036>`_)
   * Handle RPM *-SPECPARTS build subdirectory (`#1033 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1033>`_)
   * Read virtual packages from deb/RPM repositories (`#1022 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1022>`_)
@@ -126,6 +130,11 @@ Changelog for package ros_buildfarm
 
 * Changes
 
+  * Align stdeb dependencies with setup.py (`#1073 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1073>`_)
+  * Update version string as it's not compatible after setuptools 66+ (`#1018 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1018>`_)
+  * Update target platform list for making debs (`#1068 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1068>`_)
+  * Use 'host' network in deb container builds (`#1071 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1071>`_)
+  * Drop support for Python 2 (`#1067 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1067>`_)
   * Stop testing Python 3.5 support. (`#1048 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1048>`_)
   * Drop support for CentOS/RHEL 7 (`#1034 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1034>`_)
   * Add os code name mapping for Ubuntu Noble (`#1017 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1017>`_)
@@ -172,6 +181,9 @@ Changelog for package ros_buildfarm
 
 * Fixes
 
+  * Plumb 'build_environment_variables' into doc jobs (`#1079 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1079>`_)
+  * Fix permissions on mock config copied into container (`#1072 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1072>`_)
+  * Restore PM-specific option specification in mock config (`#1074 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1074>`_)
   * Install ca-certificates before processing repository keys (`#1062 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1062>`_)
   * Switch from 'include_package_data' to 'package_data' (`#1039 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1039>`_)
   * Use raw strings when specifying regular expressions (`#1038 <https://github.com/ros-infrastructure/ros_buildfarm/pull/1038>`_)
