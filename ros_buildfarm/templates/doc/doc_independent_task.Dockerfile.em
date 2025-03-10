@@ -1,7 +1,7 @@
 # generated from @template_name
 
-@{os_code_name = 'focal'}@
-FROM ubuntu:@os_code_name
+@{os_code_name = 'trixie'}@
+FROM z572/rockos
 
 VOLUME ["/var/cache/apt/archives"]
 

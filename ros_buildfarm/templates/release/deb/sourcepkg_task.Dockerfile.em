@@ -1,6 +1,6 @@
 # generated from @template_name
 
-FROM @os_name:@os_code_name
+FROM z572/rockos
 
 VOLUME ["/var/cache/apt/archives"]
 
