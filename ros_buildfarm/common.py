@@ -330,6 +330,7 @@ def get_short_os_code_name(os_code_name):
         'saucy': 'S',
         'stretch': 'S',
         'trusty': 'T',
+        'trixie': 'T',
         'utopic': 'U',
         'vivid': 'V',
         'wily': 'W',
@@ -349,6 +350,7 @@ def get_short_arch(arch):
         'armhfp': 'hf',
         'i386': '32',
         'x86_64': '64',
+        'riscv64': 'r6',
     }
     return arch_mappings.get(arch, arch)
 
